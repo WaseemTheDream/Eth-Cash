@@ -40,4 +40,29 @@ contract EthCash {
   function getValue(string _hId) public view returns(uint) {
     return escrowedCoins[_hId].value;
   }
+
+  function isLocked(string _hId) public view returns(bool) {
+    address recipient = escrowedCoins[_hId].recipient;
+    uint lockTime = escrowedCoins[_hId].lockTime[recipient];
+    if (block.timestamp < lockTime + maxLockTime) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function lock(string _hId) public {
+    EthCoin memory coin = escrowedCoins[_hId];
+    address currentRecipient = coin.recipient;
+    if (currentRecipient == address(0)) {
+      // coin hasn't been previously locked
+      _lock(_hId);
+    }
+  }
+
+  function _lock(string _hId) private {
+    escrowedCoins[_hId].recipient = msg.sender;
+    escrowedCoins[_hId].numLocks[msg.sender] += 1;
+    escrowedCoins[_hId].lockTime[msg.sender] = block.timestamp;
+  }
 }
