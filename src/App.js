@@ -153,14 +153,14 @@ class App extends Component {
               <h3>Step 3: Set Password</h3>
               <p>Ask the recipient to enter a password. <br /><em>Note: You should not know this password.</em></p>
               <strong>Token Code: </strong>
-              <input type="text" onChange={ this.setTokenCode } />
+              <input type="text" value={ this.state.tokenCode } onChange={ this.setTokenCode } style={{ width: '30%' }} />
               <br />
               <br />
               <strong>Password: </strong>
               <input type="password" name="password" onChange={ this.setPassword }/>
               <br />
               <br />
-              <button onClick={this.handleMintToken} style={{ width: '40%' }}>
+              <button onClick={this.handleMintToken} style={{ width: '35%' }}>
                 Mint
               </button>
               <h2>Redeem Token</h2>
