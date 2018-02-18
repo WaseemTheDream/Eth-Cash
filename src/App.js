@@ -109,6 +109,30 @@ class App extends Component {
       });
   }
 
+  handleRedeem() {
+    console.log("Redeem with: " + app.state.redeemPassword);
+    console.log(app.accounts);
+
+    app.ethCashInstance.lock(
+      app.doubleHash(app.state.tokenCode),
+      {from: app.accounts[0]}).then((result) => {   
+        // Then redeem      
+        app.ethCashInstance.isLocked(
+          app.doubleHash(app.state.tokenCode),
+          {from: app.accounts[0]}).then((result) => {
+            // is logged
+            console.log(result);
+            app.ethCashInstance.redeem(
+              app.doubleHash(app.state.tokenCode),
+              app.hash(app.state.password),
+              {from: app.accounts[0]}).then((result) => {
+                console.log(result);
+              });
+          });
+
+      });
+  }
+
   doubleHash(input) {
     return app.state.web3.toHex(app.state.web3.sha3(app.state.web3.sha3(input)));
   }
@@ -132,6 +156,12 @@ class App extends Component {
   setPassword(e) {
     app.setState({
       password: e.target.value
+    })
+  }
+
+  setRedeemPassword(e) {
+    app.setState({
+      redeemPassword: e.target.value
     })
   }
 
@@ -176,8 +206,16 @@ class App extends Component {
               <button onClick={this.handleMintToken} style={{ width: '35%' }}>
                 Mint
               </button>
-              <h2>Redeem Token</h2>
-              <p>TODO Fill this out</p>
+              <br />
+              <br />
+              <h3>Step 4: Redeem Token with your password</h3>
+              <strong>Password: </strong>
+              <input type="password" name="password" onChange={ this.setRedeemPassword }/>
+              <br />
+              <br />
+              <button onClick={this.handleRedeem} style={{ width: '40%' }}>
+                Redeem
+              </button>
             </div>
           </div>
         </main>
