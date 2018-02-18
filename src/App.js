@@ -78,6 +78,14 @@ class App extends Component {
     console.error(err)
   }
 
+  handleCheckValue() {
+    app.ethCashInstance.getValue(app.doubleHash(app.state.tokenCode)).then((result) => {
+      app.setState({
+        tokenValue: app.state.web3.fromWei(result, 'ether')
+      })
+    });
+  }
+
   handleMintToken() {
     if (app.state.tokenCode == null || 
         // app.state.tokenValue <= 0 || 
@@ -138,6 +146,10 @@ class App extends Component {
             <div className="pure-u-1-1">
               <h1>Welcome!</h1>
               <p>Mint Ether into a physical token to easily give it to someone!</p>
+              <h2>Check Token Value</h2>
+              <button onClick={this.handleCheckValue} style={{ width: '35%' }}>
+                Check Value
+              </button>
               <h2>Mint New Token</h2>
               <h3>Step 1: Set Amount</h3>
               <p>Enter the amount of Ether you would like to put into this coin.</p>
