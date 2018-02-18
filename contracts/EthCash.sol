@@ -60,8 +60,11 @@ contract EthCash {
     }
   }
 
-  function redeem(uint _hId) public {
+  function redeem(uint _hId, string password) public {
     require(isLocked(_hId));
+    bytes32 hashedPassword = keccak256(password);
+    bytes32 storedHashedPassword = bytes32(escrowedCoins[_hId].hPassword);
+    require(hashedPassword == storedHashedPassword);
     EthCoin memory coin = escrowedCoins[_hId];
     coin.recipient.transfer(coin.value);
     delete escrowedCoins[_hId];

@@ -56,7 +56,7 @@ contract('EthCash', function(accounts) {
     }).then(function() {
       return ethCoinInstance.isLocked(hash("123"));
     }).then(function(storedData) {
-      return ethCoinInstance.redeem(hash("123"));
+      return ethCoinInstance.redeem(hash("123"), "pass");
     }).then(function() {
       newAccount1Balance = web3.eth.getBalance(accounts[1]).toNumber();
       amountReceived = newAccount1Balance - account1Balance;
