@@ -1,0 +1,1067 @@
+{
+  "contractName": "EthCash",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_hId",
+          "type": "string"
+        },
+        {
+          "name": "_hPassword",
+          "type": "string"
+        }
+      ],
+      "name": "createCoin",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_hId",
+          "type": "string"
+        }
+      ],
+      "name": "getValue",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x606060405261012c600055341561001557600080fd5b610437806100246000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063172de6da14610051578063960384a0146100e6575b600080fd5b6100e4600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610157565b005b34156100f157600080fd5b610141600480803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610295565b6040518082815260200191505060405180910390f35b61015f61030d565b60003411151561016e57600080fd5b608060405190810160405280838152602001428152602001348152602001600073ffffffffffffffffffffffffffffffffffffffff168152509050806001846040518082805190602001908083835b6020831015156101e257805182526020820191506020810190506020830392506101bd565b6001836020036101000a03801982511681845116808217855250505050505090500191505090815260200160405180910390206000820151816000019080519060200190610231929190610352565b50602082015181600101556040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550905050505050565b60006001826040518082805190602001908083835b6020831015156102cf57805182526020820191506020810190506020830392506102aa565b6001836020036101000a0380198251168184511680821785525050505050509050019150509081526020016040518091039020600201549050919050565b6080604051908101604052806103216103d2565b81526020016000815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061039357805160ff19168380011785556103c1565b828001600101855582156103c1579182015b828111156103c05782518255916020019190600101906103a5565b5b5090506103ce91906103e6565b5090565b602060405190810160405280600081525090565b61040891905b808211156104045760008160009055506001016103ec565b5090565b905600a165627a7a723058201f34ac4a2f10348be23b23459bb664a659be44bcacc396c44606ae5b889e7ca60029",
+  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063172de6da14610051578063960384a0146100e6575b600080fd5b6100e4600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610157565b005b34156100f157600080fd5b610141600480803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610295565b6040518082815260200191505060405180910390f35b61015f61030d565b60003411151561016e57600080fd5b608060405190810160405280838152602001428152602001348152602001600073ffffffffffffffffffffffffffffffffffffffff168152509050806001846040518082805190602001908083835b6020831015156101e257805182526020820191506020810190506020830392506101bd565b6001836020036101000a03801982511681845116808217855250505050505090500191505090815260200160405180910390206000820151816000019080519060200190610231929190610352565b50602082015181600101556040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550905050505050565b60006001826040518082805190602001908083835b6020831015156102cf57805182526020820191506020810190506020830392506102aa565b6001836020036101000a0380198251168184511680821785525050505050509050019150509081526020016040518091039020600201549050919050565b6080604051908101604052806103216103d2565b81526020016000815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061039357805160ff19168380011785556103c1565b828001600101855582156103c1579182015b828111156103c05782518255916020019190600101906103a5565b5b5090506103ce91906103e6565b5090565b602060405190810160405280600081525090565b61040891905b808211156104045760008160009055506001016103ec565b5090565b905600a165627a7a723058201f34ac4a2f10348be23b23459bb664a659be44bcacc396c44606ae5b889e7ca60029",
+  "sourceMap": "26:1002:0:-;;;67:9;48:28;;26:1002;;;;;;;;;;;;;;",
+  "deployedSourceMap": "26:1002:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;630:292;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;926:100;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;630:292;731:19;;:::i;:::-;723:1;711:9;:13;703:22;;;;;;;;753:132;;;;;;;;;780:10;753:132;;;;809:15;753:132;;;;839:9;753:132;;;;876:1;753:132;;;;;731:154;;913:4;891:13;905:4;891:19;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:2;51:6;36:153;;;182:3;176:5;171:3;164:6;98:2;93:3;89;82:19;;123:2;118:3;114;107:19;;148:2;143:3;139;132:19;;36:153;;;274:1;267:3;263:2;259:3;254;250;246;315:4;311:3;305;299:5;295:3;356:4;350:3;344:5;340:3;389:7;380;377:2;372:3;365:6;3:399;;;;;;;;;;;;;;;;;;;;;;;;891:26:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;630:292;;;:::o;926:100::-;977:4;996:13;1010:4;996:19;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:2;51:6;36:153;;;182:3;176:5;171:3;164:6;98:2;93:3;89;82:19;;123:2;118:3;114;107:19;;148:2;143:3;139;132:19;;36:153;;;274:1;267:3;263:2;259:3;254;250;246;315:4;311:3;305;299:5;295:3;356:4;350:3;344:5;340:3;389:7;380;377:2;372:3;365:6;3:399;;;;;;;;;;;;;;;;;;;;;;;;996:25:0;;;989:32;;926:100;;;:::o;26:1002::-;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.17;\n\ncontract EthCash {\n\n  uint maxLockTime = 5 minutes;\n  \n  struct EthCoin {\n    // the hashed password for the coin\n    string hPassword;\n\n    // the block time when the coin was minted\n    uint mintTime;\n\n    // the value of the coin\n    uint value;\n\n    // the recipient to which the coin is locked to\n    address recipient;\n\n    // the block time when the coin was locked to the specified address\n    mapping (address => uint) lockTime;\n\n    // the number of times the coin was locked to the specified address\n    mapping (address => uint) numLocks;\n  }\n\n  mapping (string => EthCoin) escrowedCoins;\n\n  function createCoin(string _hId, string _hPassword) payable public {\n    require(msg.value > 0);\n    EthCoin memory coin = EthCoin({\n      hPassword: _hPassword, \n      mintTime: block.timestamp,\n      value: msg.value, \n      recipient: address(0)\n    });\n    escrowedCoins[_hId] = coin;\n  }\n\n  function getValue(string _hId) public view returns(uint) {\n    return escrowedCoins[_hId].value;\n  }\n}\n",
+  "sourcePath": "/Users/waseemahmad/git/Eth-Cash/contracts/EthCash.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/Users/waseemahmad/git/Eth-Cash/contracts/EthCash.sol",
+      "exportedSymbols": {
+        "EthCash": [
+          73
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".17"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            73
+          ],
+          "name": "EthCash",
+          "scope": 74
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "maxLockTime",
+              "scope": 73,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 2,
+                "name": "ElementaryTypeName",
+                "src": "48:4:0"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "35",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": "minutes",
+                  "token": "number",
+                  "type": "int_const 300",
+                  "value": "5"
+                },
+                "id": 3,
+                "name": "Literal",
+                "src": "67:9:0"
+              }
+            ],
+            "id": 4,
+            "name": "VariableDeclaration",
+            "src": "48:28:0"
+          },
+          {
+            "attributes": {
+              "canonicalName": "EthCash.EthCoin",
+              "name": "EthCoin",
+              "scope": 73,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "hPassword",
+                  "scope": 21,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 5,
+                    "name": "ElementaryTypeName",
+                    "src": "144:6:0"
+                  }
+                ],
+                "id": 6,
+                "name": "VariableDeclaration",
+                "src": "144:16:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "mintTime",
+                  "scope": 21,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 7,
+                    "name": "ElementaryTypeName",
+                    "src": "214:4:0"
+                  }
+                ],
+                "id": 8,
+                "name": "VariableDeclaration",
+                "src": "214:13:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "value",
+                  "scope": 21,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 9,
+                    "name": "ElementaryTypeName",
+                    "src": "263:4:0"
+                  }
+                ],
+                "id": 10,
+                "name": "VariableDeclaration",
+                "src": "263:10:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "recipient",
+                  "scope": 21,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 11,
+                    "name": "ElementaryTypeName",
+                    "src": "332:7:0"
+                  }
+                ],
+                "id": 12,
+                "name": "VariableDeclaration",
+                "src": "332:17:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "lockTime",
+                  "scope": 21,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "mapping(address => uint256)",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "type": "mapping(address => uint256)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 13,
+                        "name": "ElementaryTypeName",
+                        "src": "437:7:0"
+                      },
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 14,
+                        "name": "ElementaryTypeName",
+                        "src": "448:4:0"
+                      }
+                    ],
+                    "id": 15,
+                    "name": "Mapping",
+                    "src": "428:25:0"
+                  }
+                ],
+                "id": 16,
+                "name": "VariableDeclaration",
+                "src": "428:34:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "numLocks",
+                  "scope": 21,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "mapping(address => uint256)",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "type": "mapping(address => uint256)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 17,
+                        "name": "ElementaryTypeName",
+                        "src": "550:7:0"
+                      },
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 18,
+                        "name": "ElementaryTypeName",
+                        "src": "561:4:0"
+                      }
+                    ],
+                    "id": 19,
+                    "name": "Mapping",
+                    "src": "541:25:0"
+                  }
+                ],
+                "id": 20,
+                "name": "VariableDeclaration",
+                "src": "541:34:0"
+              }
+            ],
+            "id": 21,
+            "name": "StructDefinition",
+            "src": "83:497:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "escrowedCoins",
+              "scope": 73,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(string memory => struct EthCash.EthCoin storage ref)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(string memory => struct EthCash.EthCoin storage ref)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 22,
+                    "name": "ElementaryTypeName",
+                    "src": "593:6:0"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "EthCoin",
+                      "referencedDeclaration": 21,
+                      "type": "struct EthCash.EthCoin storage pointer"
+                    },
+                    "id": 23,
+                    "name": "UserDefinedTypeName",
+                    "src": "603:7:0"
+                  }
+                ],
+                "id": 24,
+                "name": "Mapping",
+                "src": "584:27:0"
+              }
+            ],
+            "id": 25,
+            "name": "VariableDeclaration",
+            "src": "584:41:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "createCoin",
+              "payable": true,
+              "scope": 73,
+              "stateMutability": "payable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_hId",
+                      "scope": 59,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 26,
+                        "name": "ElementaryTypeName",
+                        "src": "650:6:0"
+                      }
+                    ],
+                    "id": 27,
+                    "name": "VariableDeclaration",
+                    "src": "650:11:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_hPassword",
+                      "scope": 59,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 28,
+                        "name": "ElementaryTypeName",
+                        "src": "663:6:0"
+                      }
+                    ],
+                    "id": 29,
+                    "name": "VariableDeclaration",
+                    "src": "663:17:0"
+                  }
+                ],
+                "id": 30,
+                "name": "ParameterList",
+                "src": "649:32:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 31,
+                "name": "ParameterList",
+                "src": "697:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 88,
+                              "type": "function (bool) pure",
+                              "value": "require"
+                            },
+                            "id": 32,
+                            "name": "Identifier",
+                            "src": "703:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": ">",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "value",
+                                  "referencedDeclaration": null,
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 85,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 33,
+                                    "name": "Identifier",
+                                    "src": "711:3:0"
+                                  }
+                                ],
+                                "id": 34,
+                                "name": "MemberAccess",
+                                "src": "711:9:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "30",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0"
+                                },
+                                "id": 35,
+                                "name": "Literal",
+                                "src": "723:1:0"
+                              }
+                            ],
+                            "id": 36,
+                            "name": "BinaryOperation",
+                            "src": "711:13:0"
+                          }
+                        ],
+                        "id": 37,
+                        "name": "FunctionCall",
+                        "src": "703:22:0"
+                      }
+                    ],
+                    "id": 38,
+                    "name": "ExpressionStatement",
+                    "src": "703:22:0"
+                  },
+                  {
+                    "attributes": {
+                      "assignments": [
+                        40
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "coin",
+                          "scope": 59,
+                          "stateVariable": false,
+                          "storageLocation": "memory",
+                          "type": "struct EthCash.EthCoin memory",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "EthCoin",
+                              "referencedDeclaration": 21,
+                              "type": "struct EthCash.EthCoin storage pointer"
+                            },
+                            "id": 39,
+                            "name": "UserDefinedTypeName",
+                            "src": "731:7:0"
+                          }
+                        ],
+                        "id": 40,
+                        "name": "VariableDeclaration",
+                        "src": "731:19:0"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": true,
+                          "lValueRequested": false,
+                          "names": [
+                            "hPassword",
+                            "mintTime",
+                            "value",
+                            "recipient"
+                          ],
+                          "type": "struct EthCash.EthCoin memory",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 21,
+                              "type": "type(struct EthCash.EthCoin storage pointer)",
+                              "value": "EthCoin"
+                            },
+                            "id": 41,
+                            "name": "Identifier",
+                            "src": "753:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 29,
+                              "type": "string memory",
+                              "value": "_hPassword"
+                            },
+                            "id": 42,
+                            "name": "Identifier",
+                            "src": "780:10:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "timestamp",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 77,
+                                  "type": "block",
+                                  "value": "block"
+                                },
+                                "id": 43,
+                                "name": "Identifier",
+                                "src": "809:5:0"
+                              }
+                            ],
+                            "id": 44,
+                            "name": "MemberAccess",
+                            "src": "809:15:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "value",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 85,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 45,
+                                "name": "Identifier",
+                                "src": "839:3:0"
+                              }
+                            ],
+                            "id": 46,
+                            "name": "MemberAccess",
+                            "src": "839:9:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "address",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_rational_0_by_1",
+                                      "typeString": "int_const 0"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(address)",
+                                  "value": "address"
+                                },
+                                "id": 47,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "868:7:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "30",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0"
+                                },
+                                "id": 48,
+                                "name": "Literal",
+                                "src": "876:1:0"
+                              }
+                            ],
+                            "id": 49,
+                            "name": "FunctionCall",
+                            "src": "868:10:0"
+                          }
+                        ],
+                        "id": 50,
+                        "name": "FunctionCall",
+                        "src": "753:132:0"
+                      }
+                    ],
+                    "id": 51,
+                    "name": "VariableDeclarationStatement",
+                    "src": "731:154:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct EthCash.EthCoin storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "struct EthCash.EthCoin storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 25,
+                                  "type": "mapping(string memory => struct EthCash.EthCoin storage ref)",
+                                  "value": "escrowedCoins"
+                                },
+                                "id": 52,
+                                "name": "Identifier",
+                                "src": "891:13:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 27,
+                                  "type": "string memory",
+                                  "value": "_hId"
+                                },
+                                "id": 53,
+                                "name": "Identifier",
+                                "src": "905:4:0"
+                              }
+                            ],
+                            "id": 54,
+                            "name": "IndexAccess",
+                            "src": "891:19:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 40,
+                              "type": "struct EthCash.EthCoin memory",
+                              "value": "coin"
+                            },
+                            "id": 55,
+                            "name": "Identifier",
+                            "src": "913:4:0"
+                          }
+                        ],
+                        "id": 56,
+                        "name": "Assignment",
+                        "src": "891:26:0"
+                      }
+                    ],
+                    "id": 57,
+                    "name": "ExpressionStatement",
+                    "src": "891:26:0"
+                  }
+                ],
+                "id": 58,
+                "name": "Block",
+                "src": "697:225:0"
+              }
+            ],
+            "id": 59,
+            "name": "FunctionDefinition",
+            "src": "630:292:0"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getValue",
+              "payable": false,
+              "scope": 73,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_hId",
+                      "scope": 72,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 60,
+                        "name": "ElementaryTypeName",
+                        "src": "944:6:0"
+                      }
+                    ],
+                    "id": 61,
+                    "name": "VariableDeclaration",
+                    "src": "944:11:0"
+                  }
+                ],
+                "id": 62,
+                "name": "ParameterList",
+                "src": "943:13:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 72,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 63,
+                        "name": "ElementaryTypeName",
+                        "src": "977:4:0"
+                      }
+                    ],
+                    "id": 64,
+                    "name": "VariableDeclaration",
+                    "src": "977:4:0"
+                  }
+                ],
+                "id": 65,
+                "name": "ParameterList",
+                "src": "976:6:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 65
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "value",
+                          "referencedDeclaration": 10,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "struct EthCash.EthCoin storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 25,
+                                  "type": "mapping(string memory => struct EthCash.EthCoin storage ref)",
+                                  "value": "escrowedCoins"
+                                },
+                                "id": 66,
+                                "name": "Identifier",
+                                "src": "996:13:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 61,
+                                  "type": "string memory",
+                                  "value": "_hId"
+                                },
+                                "id": 67,
+                                "name": "Identifier",
+                                "src": "1010:4:0"
+                              }
+                            ],
+                            "id": 68,
+                            "name": "IndexAccess",
+                            "src": "996:19:0"
+                          }
+                        ],
+                        "id": 69,
+                        "name": "MemberAccess",
+                        "src": "996:25:0"
+                      }
+                    ],
+                    "id": 70,
+                    "name": "Return",
+                    "src": "989:32:0"
+                  }
+                ],
+                "id": 71,
+                "name": "Block",
+                "src": "983:43:0"
+              }
+            ],
+            "id": 72,
+            "name": "FunctionDefinition",
+            "src": "926:100:0"
+          }
+        ],
+        "id": 73,
+        "name": "ContractDefinition",
+        "src": "26:1002:0"
+      }
+    ],
+    "id": 74,
+    "name": "SourceUnit",
+    "src": "0:1029:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-02-18T06:27:04.332Z"
+}
