@@ -60,6 +60,13 @@ contract EthCash {
     }
   }
 
+  function redeem(string _hId) public {
+    require(isLocked(_hId));
+    EthCoin memory coin = escrowedCoins[_hId];
+    coin.recipient.transfer(coin.value);
+    delete escrowedCoins[_hId];
+  }
+
   function _lock(string _hId) private {
     escrowedCoins[_hId].recipient = msg.sender;
     escrowedCoins[_hId].numLocks[msg.sender] += 1;
