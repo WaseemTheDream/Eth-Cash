@@ -27,6 +27,18 @@ contract('EthCash', function(accounts) {
     });
   });
 
+  it("should not show as locked without acquiring lock", function() {
+    return EthCash.deployed().then(function(instance) {
+      ethCoinInstance = instance;
+      return ethCoinInstance.createCoin("123", "pass", {from: accounts[0], value: 89});
+    }).then(function() {
+      return ethCoinInstance.isLocked("123");
+    }).then(function(storedData) {
+      assert.equal(storedData, false, "The coin is locked when not expected it to be.");
+    });
+
+  });
+
   it("should send the money to the recipient after calling receive", function() {
     return EthCash.deployed().then(function(instance) {
       ethCoinInstance = instance;
