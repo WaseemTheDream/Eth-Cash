@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import SimpleStorageContract from '../build/contracts/SimpleStorage.json'
+import EthCashContract from '../build/contracts/EthCash.json'
+import QrReader from 'react-qr-reader'
 import getWeb3 from './utils/getWeb3'
 
 import './css/oswald.css'
@@ -7,14 +8,22 @@ import './css/open-sans.css'
 import './css/pure-min.css'
 import './App.css'
 
+var app;
+
 class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      storageValue: 0,
+      tokenCode: null,
+      tokenValue: 0,
+      qrCodeReaderDelay: 500,
       web3: null
     }
+
+    this.handleQrCodeScan = this.handleQrCodeScan.bind(this);
+
+    app = this;
   }
 
   componentWillMount() {
@@ -43,27 +52,77 @@ class App extends Component {
      * state management library, but for convenience I've placed them here.
      */
 
-    const contract = require('truffle-contract')
-    const simpleStorage = contract(SimpleStorageContract)
-    simpleStorage.setProvider(this.state.web3.currentProvider)
-
-    // Declaring this for later so we can chain functions on SimpleStorage.
-    var simpleStorageInstance
+    const contract = require('truffle-contract');
+    const ethCash = contract(EthCashContract);
+    ethCash.setProvider(this.state.web3.currentProvider);
 
     // Get accounts.
     this.state.web3.eth.getAccounts((error, accounts) => {
-      simpleStorage.deployed().then((instance) => {
-        simpleStorageInstance = instance
+      ethCash.deployed().then((instance) => {
+        app.ethCashInstance = instance;
+        app.accounts = accounts;
+      });
+    })
+  }
 
-        // Stores a given value, 5 by default.
-        return simpleStorageInstance.set(5, {from: accounts[0]})
-      }).then((result) => {
-        // Get the value from the contract to prove it worked.
-        return simpleStorageInstance.get.call(accounts[0])
-      }).then((result) => {
-        // Update state with the result.
-        return this.setState({ storageValue: result.c[0] })
+  handleQrCodeScan(data) {
+    if (data) {
+      this.setState({
+        tokenCode: data,
       })
+    }
+  }
+
+  handleQrCodeError(err) {
+    console.error(err)
+  }
+
+  handleMintToken() {
+    console.log("Mint");
+    console.log(app);
+    console.log(app.state);
+    console.log(app.state.tokenCode);
+    console.log(app.state.password);
+    if (app.state.tokenCode == null || 
+        // app.state.tokenValue <= 0 || 
+        app.state.password == null) {
+      console.log("Missing fields.");
+      return;
+    }
+
+    var amountToSend = app.state.web3.toWei(app.state.tokenValue, 'ether');
+
+    app.ethCashInstance.createCoin(
+      app.doubleHash(app.state.tokenCode),
+      app.doubleHash(app.state.password),
+      {from: app.accounts[0], value: amountToSend}).then((result) => {
+        console.log(result);
+      });
+  }
+
+  doubleHash(input) {
+    return app.state.web3.toHex(app.state.web3.sha3(app.state.web3.sha3(input)));
+  }
+
+  hash(input) {
+    return app.state.web3.sha3(input);
+  }
+
+  setTokenCode(e) {
+    app.setState({
+      tokenCode: e.target.value
+    });
+  }
+
+  setTokenValue(e) {
+    app.setState({
+      tokenValue: e.target.value
+    });
+  }
+
+  setPassword(e) {
+    app.setState({
+      password: e.target.value
     })
   }
 
@@ -71,18 +130,41 @@ class App extends Component {
     return (
       <div className="App">
         <nav className="navbar pure-menu pure-menu-horizontal">
-            <a href="#" className="pure-menu-heading pure-menu-link">Truffle Box</a>
+            <a href="#" className="pure-menu-heading pure-menu-link">ETH Cash</a>
         </nav>
-
         <main className="container">
           <div className="pure-g">
             <div className="pure-u-1-1">
-              <h1>Good to Go!</h1>
-              <p>Your Truffle Box is installed and ready.</p>
-              <h2>Smart Contract Example</h2>
-              <p>If your contracts compiled and migrated successfully, below will show a stored value of 5 (by default).</p>
-              <p>Try changing the value stored on <strong>line 59</strong> of App.js.</p>
-              <p>The stored value is: {this.state.storageValue}</p>
+              <h1>Welcome!</h1>
+              <p>Mint Ether into a physical token to easily give it to someone!</p>
+              <h2>Mint New Token</h2>
+              <h3>Step 1: Set Amount</h3>
+              <p>Enter the amount of Ether you would like to put into this coin.</p>
+              <strong>Token Amount: </strong>
+              <input type="text" onChange={ this.setTokenValue } />
+              <h3>Step 2: Set Token Code</h3>
+              <p>You can either <strong>scan an existing QR code</strong> or <strong>generate a new code.</strong></p>
+                <QrReader
+                  delay={this.state.qrCodeReaderDelay}
+                  onError={this.handleQrCodeError}
+                  onScan={this.handleQrCodeScan}
+                  style={{ width: '25%', paddingBottom: '15px' }}
+                  />
+              <h3>Step 3: Set Password</h3>
+              <p>Ask the recipient to enter a password. <br /><em>Note: You should not know this password.</em></p>
+              <strong>Token Code: </strong>
+              <input type="text" onChange={ this.setTokenCode } />
+              <br />
+              <br />
+              <strong>Password: </strong>
+              <input type="password" name="password" onChange={ this.setPassword }/>
+              <br />
+              <br />
+              <button onClick={this.handleMintToken} style={{ width: '40%' }}>
+                Mint
+              </button>
+              <h2>Redeem Token</h2>
+              <p>TODO Fill this out</p>
             </div>
           </div>
         </main>
