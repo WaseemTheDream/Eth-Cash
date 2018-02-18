@@ -6,10 +6,15 @@ contract('EthCash', accounts => {
   let sampleAccount2 = accounts[1];
   let amountToFund = _toWei(1);
 
+  let coinIdHash1 = 0xdeadbeef;
+  let passwordIdHash1 = 0xdeadc0de;
+  let passwordIdHash2 = 0xdeadcede;
+
   let ethCashContract;
 
   beforeEach(async function () {
     ethCashContract = await EthCash.new();
+    coinFundedEventListener = ethCashContract.CoinFunded();
   });
 
   describe('fundCoin', async function() {
@@ -17,10 +22,7 @@ contract('EthCash', accounts => {
     let eventArguments;
 
     it("should fire CoinFunded with successful values the first time the coin is minted", async function() {
-      
-      let coinFundedEventListener = ethCashContract.CoinFunded();
-      
-      await ethCashContract.fundCoin("coinIdHash", "passwordHash", {from: sampleAccount1, value: amountToFund});
+      await ethCashContract.fundCoin(coinIdHash1, passwordIdHash1, {from: sampleAccount1, value: amountToFund});
 
       let coinFundedLog = await new Promise(
         (resolve, reject) => coinFundedEventListener.get(
@@ -46,13 +48,25 @@ contract('EthCash', accounts => {
     });
 
     describe('getValue', async function() {
-    await ethCashContract.fundCoin("coinIdHash", "passwordHash", {from: sampleAccount1, value: amountToFund});
+      it("should return the correct value", async function () {
+        await ethCashContract.getValue(coinIdHash1, {from: sampleAccount1});
+      });
+    });
 
-    it("should return the value ")
-  }
+    describe('lockCoin', async function() {
+      it("should lock a given hash correct value", async function () {
+        result1 = await ethCashContract.lockCoin(coinIdHash1, {from: sampleAccount1});
+        result2 = await ethCashContract.lockCoin(coinIdHash1, {from: sampleAccount2});
+      });
+    });
+
   });
 
-
+  // describe('lockCoin', async function() {
+  //   it("locking a non-existing coin should do nothing", async function () {
+  //       await ethCashContract.lock(coinIdHash1, {from: sampleAccount1});
+  //   });
+  // });
 
   // it("should store the value 89.", function() {
   //     return ethCoinInstance.createCoin("123", "pass", {from: accounts[0], value: 89});
