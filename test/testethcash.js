@@ -36,7 +36,6 @@ contract('EthCash', function(accounts) {
     }).then(function(storedData) {
       assert.equal(storedData, false, "The coin is locked when not expected it to be.");
     });
-
   });
 
   it("should send the money to the recipient after calling receive", function() {
