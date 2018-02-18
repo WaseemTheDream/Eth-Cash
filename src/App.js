@@ -17,6 +17,7 @@ class App extends Component {
     this.state = {
       tokenCode: null,
       tokenValue: 0,
+      password: null,
       qrCodeReaderDelay: 500,
       web3: null
     }
@@ -78,11 +79,6 @@ class App extends Component {
   }
 
   handleMintToken() {
-    console.log("Mint");
-    console.log(app);
-    console.log(app.state);
-    console.log(app.state.tokenCode);
-    console.log(app.state.password);
     if (app.state.tokenCode == null || 
         // app.state.tokenValue <= 0 || 
         app.state.password == null) {
@@ -96,7 +92,12 @@ class App extends Component {
       app.doubleHash(app.state.tokenCode),
       app.doubleHash(app.state.password),
       {from: app.accounts[0], value: amountToSend}).then((result) => {
-        console.log(result);
+        console.log("Successfully minted coin.");
+        app.setState({
+          tokenCode: "",
+          tokenValue: 0,
+          password: ""
+        });
       });
   }
 
@@ -141,7 +142,7 @@ class App extends Component {
               <h3>Step 1: Set Amount</h3>
               <p>Enter the amount of Ether you would like to put into this coin.</p>
               <strong>Token Amount: </strong>
-              <input type="text" onChange={ this.setTokenValue } />
+              <input type="text" value={ this.state.tokenValue } onChange={ this.setTokenValue } />
               <h3>Step 2: Set Token Code</h3>
               <p>You can either <strong>scan an existing QR code</strong> or <strong>generate a new code.</strong></p>
                 <QrReader
@@ -157,7 +158,7 @@ class App extends Component {
               <br />
               <br />
               <strong>Password: </strong>
-              <input type="password" name="password" onChange={ this.setPassword }/>
+              <input type="password" name="password" value={ this.state.password } onChange={ this.setPassword }/>
               <br />
               <br />
               <button onClick={this.handleMintToken} style={{ width: '35%' }}>
