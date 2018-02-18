@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import EthCashContract from '../build/contracts/EthCash.json'
+import QrReader from 'react-qr-reader'
 import getWeb3 from './utils/getWeb3'
 
 import './css/oswald.css'
@@ -12,9 +13,13 @@ class App extends Component {
     super(props)
 
     this.state = {
-      storageValue: 0,
+      tokenCode: null,
+      tokenValue: 0,
+      qrCodeReaderDelay: 500,
       web3: null
     }
+
+    this.handleQrCodeScan = this.handleQrCodeScan.bind(this);
   }
 
   componentWillMount() {
@@ -67,22 +72,59 @@ class App extends Component {
     })
   }
 
+  handleQrCodeScan(data) {
+    if (data) {
+      this.setState({
+        tokenCode: data,
+      })
+    }
+  }
+
+  handleQrCodeError(err){
+    console.error(err)
+  }
+
+  handleMintToken() {
+    console.log("Mint");
+  }
+
   render() {
     return (
       <div className="App">
         <nav className="navbar pure-menu pure-menu-horizontal">
             <a href="#" className="pure-menu-heading pure-menu-link">ETH Cash</a>
         </nav>
-
         <main className="container">
           <div className="pure-g">
             <div className="pure-u-1-1">
               <h1>Welcome!</h1>
               <p>Mint Ether into a physical token to easily give it to someone!</p>
               <h2>Mint New Token</h2>
-              <p>If your contracts compiled and migrated successfully, below will show a stored value of 5 (by default).</p>
-              <p>Try changing the value stored on <strong>line 59</strong> of App.js.</p>
-              <p>The stored value is: {this.state.storageValue}</p>
+              <h3>Step 1: Set Amount</h3>
+              <p>Enter the amount of Ether you would like to put into this coin.</p>
+              <strong>Token Amount: </strong>
+              <input type="text" value={this.state.tokenValue} />
+              <h3>Step 2: Set Token Code</h3>
+              <p>You can either <strong>scan an existing QR code</strong> or <strong>generate a new code.</strong></p>
+                <QrReader
+                  delay={this.state.qrCodeReaderDelay}
+                  onError={this.handleQrCodeError}
+                  onScan={this.handleQrCodeScan}
+                  style={{ width: '25%', paddingBottom: '15px' }}
+                  />
+              <h3>Step 3: Set Password</h3>
+              <p>Ask the recipient to enter a password. <br /><em>Note: You should not know this password.</em></p>
+              <strong>Token Code: </strong>
+              <input type="text" value={this.state.tokenCode } />
+              <br />
+              <br />
+              <strong>Password: </strong>
+              <input type="password" name="password" />
+              <br />
+              <br />
+              <button onClick={this.handleMintToken} style={{ width: '40%' }}>
+                Mint
+              </button>
               <h2>Redeem Token</h2>
               <p>TODO Fill this out</p>
             </div>
